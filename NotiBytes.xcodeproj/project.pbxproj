@@ -220,6 +220,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application: Kevin Wojniak";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "NotiBytes/NotiBytes-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -231,6 +232,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application: Kevin Wojniak";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "NotiBytes/NotiBytes-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
