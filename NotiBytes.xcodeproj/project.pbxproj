@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5360D9D178CE91F003B9B8C /* PasteboardWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A5360D9C178CE91F003B9B8C /* PasteboardWatcher.m */; };
 		A5B0BD80178CD72C00B6490A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B0BD7F178CD72C00B6490A /* Cocoa.framework */; };
 		A5B0BD93178CD72C00B6490A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B0BD92178CD72C00B6490A /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5360D9B178CE91F003B9B8C /* PasteboardWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteboardWatcher.h; sourceTree = "<group>"; };
+		A5360D9C178CE91F003B9B8C /* PasteboardWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteboardWatcher.m; sourceTree = "<group>"; };
 		A5B0BD7C178CD72C00B6490A /* NotiBytes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotiBytes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B0BD7F178CD72C00B6490A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A5B0BD87178CD72C00B6490A /* NotiBytes-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NotiBytes-Info.plist"; sourceTree = "<group>"; };
@@ -61,6 +64,8 @@
 			children = (
 				A5B0BD91178CD72C00B6490A /* AppDelegate.h */,
 				A5B0BD92178CD72C00B6490A /* AppDelegate.m */,
+				A5360D9B178CE91F003B9B8C /* PasteboardWatcher.h */,
+				A5360D9C178CE91F003B9B8C /* PasteboardWatcher.m */,
 				A5B0BD87178CD72C00B6490A /* NotiBytes-Info.plist */,
 			);
 			path = NotiBytes;
@@ -134,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5B0BD93178CD72C00B6490A /* AppDelegate.m in Sources */,
+				A5360D9D178CE91F003B9B8C /* PasteboardWatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

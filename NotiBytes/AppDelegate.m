@@ -4,20 +4,27 @@
 //
 
 #import "AppDelegate.h"
+#import "PasteboardWatcher.h"
+
+@interface AppDelegate (Private)
+- (void)handleText:(NSString*)text;
+@end
 
 @implementation AppDelegate
 {
-    NSPasteboard *pboard_;
-    NSTimer *pboardTimer_;
-    NSInteger lastChangeCount_;
+    PasteboardWatcher *pboardWatcher_;
     NSString *lastString_;
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    pboard_ = [NSPasteboard generalPasteboard];
-    pboardTimer_ = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(checkPasteboard) userInfo:nil repeats:YES];
-	lastChangeCount_ = [pboard_ changeCount];
+    pboardWatcher_ = [[PasteboardWatcher alloc] initWithPasteboard:[NSPasteboard generalPasteboard] handler:^(NSPasteboard *pboard) {
+        NSString *str = [pboard stringForType:NSStringPboardType];
+        if (![str isEqualToString:lastString_]) {
+            [self handleText:[str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
+            lastString_ = str;
+        }
+    }];
 }
 
 - (void)handleValue:(int64_t)value forText:(NSString*)text
@@ -76,20 +83,6 @@
     if ([self tryLocalized:text]) {
         return;
     }
-}
-
-- (void)checkPasteboard
-{
-	NSInteger currentChangeCount = [pboard_ changeCount];
-	if (currentChangeCount == lastChangeCount_) {
-		return;
-    }
-    NSString *str = [pboard_ stringForType:NSStringPboardType];
-    if (![str isEqualToString:lastString_]) {
-        [self handleText:[str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]];
-        lastString_ = str;
-    }
-	lastChangeCount_ = currentChangeCount;
 }
 
 @end
